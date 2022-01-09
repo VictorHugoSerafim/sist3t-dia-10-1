@@ -23,7 +23,7 @@ if($btnCadUsuario){
 		header("Location: pagamento.php");
 	}else{
 		$_SESSION['msg'] = "Erro ao cadastrar o usuário";
-		cabeçalho ( "Local: index.php" );
+		header("Location: index.php");
 	}
 }
 ?>
