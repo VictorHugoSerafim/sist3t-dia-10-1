@@ -1,8 +1,8 @@
 <?php
-$servername = "localhost";
-$database = "sistdez";
-$username = "root";
-$password = "usbw";
+$servername = "dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+$database = "	qdtcpjz1or7zy5km";
+$username = "	kc6pkui3la1tftux";
+$password = "	ocjnu2n93wmjnajz";
 
 // Conexão 
 $conn = mysqli_connect($servername, $username, $password, $database);
