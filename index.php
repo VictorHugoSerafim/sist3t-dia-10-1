@@ -59,7 +59,7 @@ if($btnCadUsuario){
 
       <hr class="my-4">
 
-<!--     <div class="wrapper">
+    <div class="wrapper">
        <div class="title-text">
           <div class="title signup">
              Cadastrar
@@ -86,7 +86,7 @@ if($btnCadUsuario){
              </form>
           </div>
        </div>
-    </div> -->
+    </div>
 
     <hr class="my-4">
       <footer class="my-5 pt-5 text-muted text-center text-small">
