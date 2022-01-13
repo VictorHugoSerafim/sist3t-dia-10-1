@@ -1,7 +1,8 @@
 <?php
-include_once 'conexao.php';
 
 if(isset($_POST['btnCadDados'])){
+	include_once 'conexao.php';
+
 	$paymentMethod = addslashes($_POST['paymentMethod']);
 	$nomeCartao = addslashes($_POST['nomeCartao']);
 	$numeroCartao = addslashes($_POST['numeroCartao']);
