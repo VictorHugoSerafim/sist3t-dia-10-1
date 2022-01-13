@@ -1,31 +1,3 @@
-<?php
-session_start();
-ob_start();
-$btnCadDados = filter_input(INPUT_POST, 'btnCadDados', FILTER_SANITIZE_STRING);
-if($btnCadDados){
-	include_once 'conexao.php';
-	$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
-	// $dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
-	
-	$result_dados = "INSERT INTO pagamento (credito_debito, nome_cartao, numero_cartao, vencimento,	cvc) VALUES (
-					'" .$dados['paymentMethod']. "',
-					'" .$dados['nomeCartao']. "',
-					'" .$dados['numeroCartao']. "',
-					'" .$dados['vencimento']. "',
-          '" .$dados['cvc']. "'
-					)";
-	$resultado_usario = mysqli_query($conn, $result_usuario);
-   
-	if(mysqli_insert_id($conn)){
-      session_start();
-		header("Location: itens.php");
-	}else{
-		$_SESSION['msg'] = "Erro ao cadastrar o usuário";
-	}
-}
-?>
-
 <!doctype html>
 <html lang="pt-br">
     <head>
@@ -61,7 +33,7 @@ if($btnCadDados){
               </div> 
 
     
-              <form method="POST" action="index.php">
+              <form method="POST" action="CadPag.php">
 
                 <div class="my-3">
                   <div class="form-check">
