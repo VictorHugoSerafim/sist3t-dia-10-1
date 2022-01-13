@@ -36,7 +36,7 @@
           </div>
        </div>
           <div class="form-inner">
-             <form method="POST" action="valia.php" class="signup">
+             <form method="POST" action="valida.php" class="signup">
                 <div class="field">
                    <input type="text" name="nome" placeholder="Nome" required>
                 </div>
