@@ -7,7 +7,7 @@
     try{
         $pdo = new PDO("mysql:host=".HOST.";dbname=".DB,USER,PASS,array(PDO
         ::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-        // echo "Conectado";
+        echo "Conectado";
     }catch(Exception $e){
         echo "Nao conectou". $e->getMessage();
         exit;
