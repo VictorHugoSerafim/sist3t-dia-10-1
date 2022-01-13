@@ -1,14 +1,3 @@
-<?php
-if( $_POST ){
-   $mysqli_connection = new MySQLi('uyu7j8yohcwo35j3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 'sk219jft4qfiwql9', 'sk219jft4qfiwql9', 'ppmnzoters1z67jj');
-   if($mysqli_connection->connect_error){
-      echo "Desconectado! Erro: " . $mysqli_connection->connect_error;
-   }else{
-      echo "Conectado!";
-   }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
    <head>
@@ -47,7 +36,7 @@ if( $_POST ){
             </div>
          </div>
             <div class="form-inner">
-               <form method="POST" action="index.php" class="signup">
+               <form method="POST" action="CadUser.php" class="signup">
                   <div class="field">
                      <input type="text" name="nome" placeholder="Nome" required>
                   </div>
@@ -55,7 +44,7 @@ if( $_POST ){
                      <input type="text" name="email" placeholder="E-mail" required>
                      </div>
                      <div class="field">
-                        <input type="password" placeholder="Senha" required>
+                        <input type="password" name="senha" placeholder="Senha" required>
                      </div>
                      <div class="field">
                         <input type="text" name="telefone" placeholder="Telefone" required>
