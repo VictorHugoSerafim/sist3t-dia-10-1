@@ -1,51 +1,3 @@
-
-
-<?php
-
-if( $_POST ){
-
-   $con = mysql_connect('dcrhg4kh56j13bnu.cbetxkdyhwsb.us-east-1.rds.amazonaws.com', 'kc6pkui3la1tftux', '	ocjnu2n93wmjnajz') 
-   or die(mysql_error() );
-   mysql_select_db('qdtcpjz1or7zy5km', $con) or die(mysql_error() );
-
-   echo 'foi garai';
-
-
-
-
-}
-
-
-
-
-
-// session_start();
-// ob_start();
-// $btnCadUsuario = filter_input(INPUT_POST, 'btnCadUsuario', FILTER_SANITIZE_STRING);
-// if($btnCadUsuario){
-// 	include_once 'conexao.php';
-// 	$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
-// 	$dados['senha'] = password_hash($dados['senha'], PASSWORD_DEFAULT);
-	
-// 	$result_usuario = "INSERT INTO usuarios (nome, email, senha, telefone) VALUES (
-// 					'" .$dados['nome']. "',
-// 					'" .$dados['email']. "',
-// 					'" .$dados['senha']. "',
-// 					'" .$dados['telefone']. "'
-// 					)";
-// 	$resultado_usario = mysqli_query($conn, $result_usuario);
-   
-// 	if(mysqli_insert_id($conn)){
-//       session_start();
-//       $_SESSION["usuarios"] = $resultado_usario[0]["nome"];
-// 		header("Location: pagamento.php");
-// 	}else{
-// 		$_SESSION['msg'] = "Erro ao cadastrar o usuário";
-// 	}
-// }
-?>
-
 <!DOCTYPE php>
 <php lang="pt-br">
 <head>
@@ -84,7 +36,7 @@ if( $_POST ){
           </div>
        </div>
           <div class="form-inner">
-             <form method="POST" action="index.php" class="signup">
+             <form method="POST" action="valia.php" class="signup">
                 <div class="field">
                    <input type="text" name="nome" placeholder="Nome" required>
                 </div>
