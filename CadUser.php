@@ -1,7 +1,9 @@
 <?php
-include_once 'conexao.php';
 
 if(isset($_POST['btnCadUsuario'])){
+		
+include_once 'conexao.php';			
+	
 	$nome = addslashes($_POST['nome']);
 	$email = addslashes($_POST['email']);
 	$senha = addslashes($_POST['senha']);
