@@ -33,15 +33,15 @@
                 <div class="container">
                     <?PHP
                     // ARRAY ULTIDIMENCIONAL
-                    $itens = array(['image'=>'imgs/placa - zotac.jpg', 'nome'=>'Zotac NVIDIA GeForce RTX 3060 Ti', 'preco'=>'7.058,00'],
-                                    ['image'=>'imgs/placa - asus.jpg', 'nome'=>'Asus NVIDIA GeForce GTX 1650', 'preco'=>'2.823,00'],
-                                    ['image'=>'imgs/placamae - MSI.jpg', 'nome'=>'Placa-mãe MSI MPG Z490 GAMING CARBON', 'preco'=>'2.705,76'],
-                                    ['image'=>'imgs/gabinete - risemode.jpg', 'nome'=>'Gabinete Rise Mode Glass 06', 'preco'=>'1.243,00'],
-                                    ['image'=>'imgs/placamae - asrock.jpg', 'nome'=>'Placa-Mãe ASRock B450M Steel Legend', 'preco'=>'1.478,00'],
-                                    ['image'=>'imgs/teclado - hyperx.jpg', 'nome'=>'Teclado Mecânico Gamer HyperX Alloy Origins', 'preco'=>'1.035,00'],
-                                    ['image'=>'imgs/processador - i9.jpg', 'nome'=>'Processador Intel Core i9-9900K', 'preco'=>'3.059,00'],
-                                    ['image'=>'imgs/monitor gamer - samsung.jpg', 'nome'=>'Monitor Gamer Samsung Odyssey G3', 'preco'=>'2.761,00'],
-                                    ['image'=>'imgs/fonte - asus.jpg', 'nome'=>'Fonte Asus ROG-STRIX-750G', 'preco'=>'1.588,00'],
+                    $itens = array(['image'=>'imagem/placa - zotac.jpg', 'nome'=>'Zotac NVIDIA GeForce RTX 3060 Ti', 'preco'=>'7.058,00'],
+                                    ['image'=>'imagem/placa - asus.jpg', 'nome'=>'Asus NVIDIA GeForce GTX 1650', 'preco'=>'2.823,00'],
+                                    ['image'=>'imagem/placamae - MSI.jpg', 'nome'=>'Placa-mãe MSI MPG Z490 GAMING CARBON', 'preco'=>'2.705,76'],
+                                    ['image'=>'imagem/gabinete - risemode.jpg', 'nome'=>'Gabinete Rise Mode Glass 06', 'preco'=>'1.243,00'],
+                                    ['image'=>'imagem/placamae - asrock.jpg', 'nome'=>'Placa-Mãe ASRock B450M Steel Legend', 'preco'=>'1.478,00'],
+                                    ['image'=>'imagem/teclado - hyperx.jpg', 'nome'=>'Teclado Mecânico Gamer HyperX Alloy Origins', 'preco'=>'1.035,00'],
+                                    ['image'=>'imagem/processador - i9.jpg', 'nome'=>'Processador Intel Core i9-9900K', 'preco'=>'3.059,00'],
+                                    ['image'=>'imagem/monitor gamer - samsung.jpg', 'nome'=>'Monitor Gamer Samsung Odyssey G3', 'preco'=>'2.761,00'],
+                                    ['image'=>'imagem/fonte - asus.jpg', 'nome'=>'Fonte Asus ROG-STRIX-750G', 'preco'=>'1.588,00'],
                     );
 
                     foreach ($itens as $key => $value){
