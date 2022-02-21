@@ -28,180 +28,143 @@
 
       <form method="POST">
         <div class="album py-5 bg-light">
-          <div class="itens-back">
-            <div class="container">
-              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/placa - zotac.jpg">
+            <div class="itens-back">
 
-                    <div class="card-body">
-                      <p class="card-text">Placa de Vídeo Zotac NVIDIA GeForce RTX 3060 Ti Twin Edge LHR, 8GB,
-                        14.0 Gbps, GDDR6, DLSS, Ray Tracing - ZT-A30610E-10MLHR
-                        <br><br>
-                        R$ 7.058,00
-                          ou
-                          12x de R$ 588,00 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/placa - asus.jpg">
+                <div class="container">
+                    <?PHP
+                    // ARRAY ULTIDIMENCIONAL
+                    $itens = array(['image'=>'imgs/placa - zotac.jpg', 'nome'=>'Zotac NVIDIA GeForce RTX 3060 Ti', 'preco'=>'7.058,00'],
+                                    ['image'=>'imgs/placa - asus.jpg', 'nome'=>'Asus NVIDIA GeForce GTX 1650', 'preco'=>'2.823,00'],
+                                    ['image'=>'imgs/placamae - MSI.jpg', 'nome'=>'Placa-mãe MSI MPG Z490 GAMING CARBON', 'preco'=>'2.705,76'],
+                                    ['image'=>'imgs/gabinete - risemode.jpg', 'nome'=>'Gabinete Rise Mode Glass 06', 'preco'=>'1.243,00'],
+                                    ['image'=>'imgs/placamae - asrock.jpg', 'nome'=>'Placa-Mãe ASRock B450M Steel Legend', 'preco'=>'1.478,00'],
+                                    ['image'=>'imgs/teclado - hyperx.jpg', 'nome'=>'Teclado Mecânico Gamer HyperX Alloy Origins', 'preco'=>'1.035,00'],
+                                    ['image'=>'imgs/processador - i9.jpg', 'nome'=>'Processador Intel Core i9-9900K', 'preco'=>'3.059,00'],
+                                    ['image'=>'imgs/monitor gamer - samsung.jpg', 'nome'=>'Monitor Gamer Samsung Odyssey G3', 'preco'=>'2.761,00'],
+                                    ['image'=>'imgs/fonte - asus.jpg', 'nome'=>'Fonte Asus ROG-STRIX-750G', 'preco'=>'1.588,00'],
+                    );
 
-                    <div class="card-body">
-                      <p class="card-text">Placa de Vídeo Asus NVIDIA GeForce GTX 1650, 4GB, GDDR6 - TUF-GTX1650-O4GD6-P-GAMING
-                        <br><br>
-                        R$ 2.823,00
-                        ou
-                        12x de R$ 235,00 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/placamae - MSI.jpg">
-        
-                    <div class="card-body">
-                      <p class="card-text">Placa-mãe MSI MPG Z490 GAMING CARBON WIFI, Intel LGA 1200, ATX, DDR4
-                        <br><br>
-                        R$ 2.705,76
-                        ou
-                        12x de R$ 225,76 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/gabinete - risemode.jpg">
+                    foreach ($itens as $key => $value){
+                    ?>
 
-                    <div class="card-body">
-                      <p class="card-text">Gabinete Rise Mode Glass 06, Frente e Lateral em Vidro, Preto
-                        <br><br>
-                        R$ 305,00
-                        ou
-                        12x de R$ 20,57 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                    <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
+                        <div class="col">
+                        <div class="card shadow-sm">
+                            <img src="<?php echo $value['image']?>"/>
+                            <div class="card-body">
+                            <p class="card-text"><?php echo $value['nome']?></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                <a href="?adicionar=<?php echo $key ?>" type="button" class="btn btn-sm btn-outline-secondary">Comprar</a>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/placamae - asrock.jpg">
+                        </div>
 
-                    <div class="card-body">
-                      <p class="card-text">Placa-Mãe ASRock B450M Steel Legend, AMD AM4, mATX, DDR4
-                        <br><br>
-                        R$ 894,00
-                        ou
-                        12x de R$ 68,61 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/teclado - hyperx.jpg">
+                        <?php 
+                        }
+                        ?>
+                
 
-                    <div class="card-body">
-                      <p class="card-text">Teclado Mecânico Gamer HyperX Alloy Origins, RGB, Switch HyperX Red, ABNT2
-                        <br><br>
-                        R$ 1.035,00
-                        ou
-                        12x de R$ 52,00 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/processador - i9.jpg">
+                    <?php 
+                        //ADD CARRINHO
+                        if(isset($_GET['adicionar'])){
+                            $idProduto = (int) $_GET['adicionar'];
+                            if(isset($itens[$idProduto])){
+                                if(isset($_SESSION['carrinho'][$idProduto])){
+                                    $_SESSION['carrinho'][$idProduto]['quantidade']++;
+                                }else {
+                                    $_SESSION['carrinho'][$idProduto] = array('quantidade'=>1, 'nome'=>$itens[$idProduto]['nome'],
+                                    'preco'=>$itens[$idProduto]['preco']); 
+                                }
+                                // echo '<script>alert("o item foi adicionado ao carrinho.");</script>';
+                            }
+                        }
+                    ?>
 
-                    <div class="card-body">
-                      <p class="card-text">
-                        Processador Intel Core i9-9900K, 3.6Ghz, 16MB Cache, LGA 1151
-                        <br><br>
-                        R$ 3.059,00
-                        ou
-                        12x de R$ 260,00 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                    <div class="carrinho">
+                        <div class="ti-carrinho">
+                            <!-- <div class="col-md-5 col-lg-4 order-md-last"> -->
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-primary">Seu carrinho</span>
+                                
+                                <span class="badge bg-primary rounded-pill">
+                                    <?php 
+                                        //QUANTIDADE DE ITENS NO CARRINHO
+                                        $qy_itens = 0;
+                                        foreach ($_SESSION['carrimho'] as $key => $value){
+                                                $qy_itens += $value['quantidade'];
+                                        }
+                                        echo $qy_itens;
+                                    ?>
+                                </span>
+                                itens no carrinho
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/monitor gamer - samsung.jpg">
+                        <div class="produtos">
+                                <?php 
+                                    //Listando os itens
+                                    foreach ($_SESSION['carrinho'] as $key => $value){
+                                ?>
+                                <div class="itens">
+                                    <a href="?remove=<?php echo $key ?>"><img src="imgs/lixo.png"></a>
+                                    <div class="nome_preco">
+                                        <h2><?php echo $value['nome']?></h2>
 
-                    <div class="card-body">
-                      <p class="card-text">Monitor Gamer Samsung Odyssey G3, 24" Full HD, 144Hz. FreeSync Premium cor Preto, HDMI/Displayport e com Ajuste de altura
-                        <br><br>
-                        R$ 2.761,00
-                        ou
-                        12x de R$ 185,00 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <img src="img/fonte - asus.jpg">
+                                        <?php $preco = $value['preco']*$value['quantidade']; ?>
+                                        <p>R$ <?php echo number_format($preco,3,'.',','); ?></p>
 
-                    <div class="card-body">
-                      <p class="card-text">Fonte Asus ROG-STRIX-750G, 750W, 80 Plus Gold, Full Modular
-                        <br><br>
-                        R$ 1.588,00
-                        ou
-                        12x de R$ 132,00 sem juros no cartão</p>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                                    </div>
+                                    <p2><?php echo $value['quantidade']?></p2>
+                                    <hr>
+                                </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
+                    <?php 
+                        }
+                    ?>
+
+                    <?php 
+                        //Remover do carrinho
+                        if(isset($_GET['remove'][$idProduto])) {
+                            $idProduto = (int) $_GET['remover'];
+                            if(isset($_SESSION['carrinho'][$idProduto]))
+                            {
+                                unset($_SESSION['carrinho'][$idProduto]);
+                            }
+                        }
+
+                        //Esviziar Carrinho
+                        if($_GET['finallizar']){
+                            unset($_SESSION['carinho']);
+                        }
+                    ?>
+
+                        <div class="total">
+                            <h2>Subtotal<p>R$
+                            <?php
+                                //Subtotal da compra
+                                foreach ($_SESSION['carrinho'] as $key => $value){
+                                    $sub += $value['preco']*$value['quantidade'];
+                                }
+                                echo number_format($sub,3,'.',',');
+                            ?></p></h2>
+
+                            <h2>Total<p1>R$
+                            <?php
+                                //Total da compra
+                                foreach ($_SESSION['carrinho'] as $key => $value){
+                                    $total += $value['preco']*$value['quantidade'];
+                                }
+                                echo number_format($total,3,'.',',');
+                            ?></p1></h2>
+
+                            <a href="?finalizar=<?php echo $key ?>"><button>Finalizar</button></a>
+                        </div>
+
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </form>
       
       <!-- footer -->
 
