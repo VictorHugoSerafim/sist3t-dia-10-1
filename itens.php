@@ -23,16 +23,15 @@
       </div>      
   
 
+      
       <!-- Corpo -->
       <hr class="my-4">
-
-      <form method="POST">
-        <div class="album py-5 bg-light">
-            <div class="itens-back">
-
-                <div class="container">
+      <div class="album py-5 bg-light">
+        <div class="itens-back">
+          <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?PHP
-                    //  ARRAY ULTIDIMENCIONAL
+                    // ARRAY ULTIDIMENCIONAL
                     $itens = array(['image'=>'img/placa - zotac.jpg', 'nome'=>'Zotac NVIDIA GeForce RTX 3060 Ti', 'preco'=>'7.058,00'],
                                     ['image'=>'img/placa - asus.jpg', 'nome'=>'Asus NVIDIA GeForce GTX 1650', 'preco'=>'2.823,00'],
                                     ['image'=>'img/placamae - MSI.jpg', 'nome'=>'Placa-mãe MSI MPG Z490 GAMING CARBON', 'preco'=>'2.705,76'],
@@ -44,31 +43,48 @@
                                     ['image'=>'img/fonte - asus.jpg', 'nome'=>'Fonte Asus ROG-STRIX-750G', 'preco'=>'1.588,00'],
                     );
                     
+
                     
                     foreach ($itens as $key => $value){
                     ?>
 
-                    <!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
                         <div class="col">
-                        <div class="card shadow-sm">
-                            <img src="<?php echo $value['image']?>"/>
-                            <div class="card-body">
-                            <p class="card-text"><?php echo $value['nome']?></p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                <a href="?adicionar=<?php echo $key ?>" type="button" class="btn btn-sm btn-outline-secondary">Comprar</a>
+                            <div class="card shadow-sm">
+                                <img src="<?php echo $value['image']?>"/>
+                                    <div class="card-body">
+                                    <p class="card-text"><?php echo $value['nome']?></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                        <a href="?adicionar=<?php echo $key ?>" type="button" class="btn btn-sm btn-outline-secondary">Comprar</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                        </div>
                         </div>
 
                         <?php 
                         }
                         ?>
-                
 
-                    <?php 
+            </div>
+          </div>
+        </div>
+      </div>    
+             
+      <div class="modal modal-tour position-static d-block py-5" tabindex="-1" role="dialog" id="modalTour">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-6 shadow">
+            <div class="modal-body p-5">
+                <h2 class="fw-bold mb-0">Seu carrinho</h2>
+
+                <ul class="d-grid gap-4 my-5 list-unstyled">
+
+                <li class="d-flex gap-4">
+                    <svg class="bi text-muted flex-shrink-0" width="48" height="48"><use xlink:href="#grid-fill"/></svg>
+                    <div>
+                        <h2 class="mb-0">Item</h2>
+
+                        <?php 
                         //ADD CARRINHO
                         if(isset($_GET['adicionar'])){
                             $idProduto = (int) $_GET['adicionar'];
@@ -82,91 +98,80 @@
                                 // echo '<script>alert("o item foi adicionado ao carrinho.");</script>';
                             }
                         }
-                    ?>
-
-                    <div class="carrinho">
-                        <div class="ti-carrinho">
-                            <!-- <div class="col-md-5 col-lg-4 order-md-last"> -->
-                                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                <span class="text-primary">Seu carrinho</span>
-                                
-                                <span class="badge bg-primary rounded-pill">
+                            ?>
+                        <div class="carrinho ">
+                            <div class="produtos">
                                     <?php 
-                                        //QUANTIDADE DE ITENS NO CARRINHO
-                                        $qy_itens = 0;
-                                        foreach ($_SESSION['carrimho'] as $key => $value){
-                                                $qy_itens += $value['quantidade'];
-                                        }
-                                        echo $qy_itens;
+                                        //Listando os itens
+                                        foreach ($_SESSION['carrinho'] as $key => $value){
                                     ?>
-                                </span>
-                                itens no carrinho
-                        </div>
-                        <div class="produtos">
-                                <?php 
-                                    //Listando os itens
-                                    foreach ($_SESSION['carrinho'] as $key => $value){
-                                ?>
-                                <div class="itens">
-                                    <a href="?remove=<?php echo $key ?>"><img src="imgs/lixo.png"></a>
-                                    <div class="nome_preco">
-                                        <h2><?php echo $value['nome']?></h2>
-
-                                        <?php $preco = $value['preco']*$value['quantidade']; ?>
-                                        <p>R$ <?php echo number_format($preco,3,'.',','); ?></p>
-
+                                    <div class="itens">
+                                        <div class="nome_preco">
+                                            <h4><?php echo $value['nome']?></h4>
+                                        </div>
+                                        <a href="?remove=<?php echo $key ?>"><button type="button" class="btn btn-lg btn-primary mt-1 w-50" data-bs-dismiss="modal">Remover</button></a>
                                     </div>
-                                    <p2><?php echo $value['quantidade']?></p2>
-                                    <hr>
-                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <?php 
-                        }
-                    ?>
-
-                    <?php 
-                        //Remover do carrinho
-                        if(isset($_GET['remove'][$idProduto])) {
-                            $idProduto = (int) $_GET['remover'];
-                            if(isset($_SESSION['carrinho'][$idProduto]))
-                            {
-                                unset($_SESSION['carrinho'][$idProduto]);
+                        <?php 
                             }
-                        }
-
-                        //Esviziar Carrinho
-                        if($_GET['finallizar']){
-                            unset($_SESSION['carinho']);
-                        }
-                    ?>
-
-                        <div class="total">
-                            <h2>Subtotal<p>R$
-                            <?php
-                                //Subtotal da compra
-                                foreach ($_SESSION['carrinho'] as $key => $value){
-                                    $sub += $value['preco']*$value['quantidade'];
+                        ?>
+                        <?php 
+                            //Remover do carrinho
+                            if(isset($_GET['remove'][$idProduto])) {
+                                $idProduto = (int) $_GET['remover'];
+                                if(isset($_SESSION['carrinho'][$idProduto]))
+                                {
+                                    unset($_SESSION['carrinho'][$idProduto]);
                                 }
-                                echo number_format($sub,3,'.',',');
-                            ?></p></h2>
+                            }
 
-                            <h2>Total<p1>R$
-                            <?php
-                                //Total da compra
-                                foreach ($_SESSION['carrinho'] as $key => $value){
-                                    $total += $value['preco']*$value['quantidade'];
-                                }
-                                echo number_format($total,3,'.',',');
-                            ?></p1></h2>
+                            //Esviziar Carrinho
+                            if($_GET['finallizar']){
+                                unset($_SESSION['carinho']);
+                            }
+                        ?>
+                    </div>
+                </li>
 
-                            <a href="?finalizar=<?php echo $key ?>"><button>Finalizar</button></a>
-                        </div>
+                <li class="d-flex gap-4">
+                    <svg class="bi text-warning flex-shrink-0" width="48" height="48"><use xlink:href="#bookmark-star"/></svg>
+                    <div>
+                    <h2 class="mb-0">Subtotal</h2>
+                    <h4 class="mb-0"> R$
+                    <?php
+                        //Subtotal da compra
+                        foreach ($_SESSION['carrinho'] as $key => $value){
+                            $sub += $value['preco']*$value['quantidade'];
+                        }
+                        echo number_format($sub,3,'.',',');
+                    ?></h4>
+                    </div>
+                </li>
+                
+                <li class="d-flex gap-4">
+                    <svg class="bi text-primary flex-shrink-0" width="48" height="48"><use xlink:href="#film"/></svg>
+                    <div>
+                    <h2 class="mb-0">Total</h2>
+                    <h4 class="mb-0"> R$
+                    <?php
+                        //Total da compra
+                        foreach ($_SESSION['carrinho'] as $key => $value){
+                            $total += $value['preco']*$value['quantidade'];
+                        }
+                        echo number_format($total,3,'.',',');
+                    ?></h4>
+                    </div>
+                </li>
 
-                </div>
+                </ul>
+                <a href="?finalizar=<?php echo $key ?>"><button type="button" class="btn btn-lg btn-primary mt-5 w-100"
+                 data-bs-dismiss="modal" onclick="alert('Compra Realizada')">Finallizar Compra</button></a>
+            </div>
             </div>
         </div>
-      
+        </div>
+        
       <!-- footer -->
 
       <hr class="my-4">
