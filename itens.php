@@ -95,7 +95,7 @@
                                     $_SESSION['carrinho'][$idProduto] = array('quantidade'=>1, 'nome'=>$itens[$idProduto]['nome'],
                                     'preco'=>$itens[$idProduto]['preco']); 
                                 }
-                                // echo '<script>alert("o item foi adicionado ao carrinho.");</script>';
+                                echo '<script>alert("o item foi adicionado ao carrinho.");</script>';
                             }
                         }
                             ?>
